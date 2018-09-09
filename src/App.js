@@ -21,6 +21,16 @@ class BooksApp extends Component {
     this.getAllBook()
   }
 
+  changeShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => {
+      BooksAPI.getAll().then(books => {
+        this.setState({
+          books
+        })
+      })
+    })
+  }
+
   render() {
     return (
       <div className="app">
@@ -50,7 +60,7 @@ class BooksApp extends Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-              <Shelf books={this.state.books} />
+              <Shelf books={this.state.books} changeShelf={this.changeShelf} />
             </div>
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>

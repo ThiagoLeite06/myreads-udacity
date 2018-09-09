@@ -1,22 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
+const Book = ({book, changeShelf}) => {
 
-class Book extends Component {
-  state = {
-    content: this.props.conteudo
-  }
-
-   
-
-  render() {
-
-    const conteudo = this.state.content
       return(
-          <div className="book" key={conteudo.id}>
+          <div className="book" key={book.id}>
             <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${conteudo.imageLinks.thumbnail})` }}></div>
+                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                 <div className="book-shelf-changer">
-                <select>
+                <select value={book.shelf} onChange={(e) => changeShelf(book, e.target.value)}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
@@ -26,10 +17,10 @@ class Book extends Component {
                 </div>
               </div>
             
-              <div className="book-title">{conteudo.title}</div>
-              <div className="book-authors">{conteudo.authors}</div>
+              <div className="book-title">{book.title}</div>
+              <div className="book-authors">{book.authors}</div>
           </div>
       )
    }
-}
+
 export default Book
