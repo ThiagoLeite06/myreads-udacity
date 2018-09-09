@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Book from './Book'
 
 const Shelf = ({books, changeShelf}) =>  {
@@ -14,7 +14,7 @@ const Shelf = ({books, changeShelf}) =>  {
             <div className="bookshelf-books">
                <ol className="books-grid">
                {currently_reading.map((books) => (
-                  <li>
+                  <li key={books.id}>
                      <Book book={books} changeShelf={changeShelf} />
                   </li>
                ))}
@@ -26,8 +26,8 @@ const Shelf = ({books, changeShelf}) =>  {
             <div className="bookshelf-books">
                <ol className="books-grid">
                {want_to_read.map((books) => (
-                  <li>
-                     <Book book={books} />
+                  <li key={books.id}>
+                     <Book book={books} changeShelf={changeShelf} />
                   </li>
                ))}
                </ol>
@@ -38,8 +38,8 @@ const Shelf = ({books, changeShelf}) =>  {
             <div className="bookshelf-books">
                <ol className="books-grid">
                {already_read.map((books) => (
-                  <li>
-                     <Book book={books} />
+                  <li key={books.id}>
+                     <Book book={books} changeShelf={changeShelf}/>
                   </li>
                ))}
                </ol>
