@@ -1,0 +1,24 @@
+.books-grid li {
+   padding: 10px 30px;
+   text-align: left;
+   margin-right: 20px;
+   background-color: #fff;
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+.book-shelf-changer {
+   position: absolute;
+   right: 0;
+   bottom: -10px;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background: #1abc9c;
+   background-image: url('../icons/arrow-drop-down.svg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 20px;
+   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
